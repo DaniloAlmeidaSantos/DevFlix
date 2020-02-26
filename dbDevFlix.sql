@@ -1,4 +1,4 @@
-8888CREATE DATABASE DevFlix;
+CREATE DATABASE DevFlix;
 
 USE DevFlix;
 
