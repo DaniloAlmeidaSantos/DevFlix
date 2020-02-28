@@ -1,9 +1,12 @@
 *{
   margin: 0;
   padding: 0;
-  text-decoration: none;
-  border: none;
   overflow: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; /* make scrollbar transparent */
 }
 
 body{
@@ -259,3 +262,82 @@ body{
   transition: 1s;
 }
 
+.containerMain{
+    @include positionStyle(relative, 100%, 91%);
+    margin: auto;
+    overflow-y: scroll;
+    .mainNews{
+        margin-top: 0.5%;
+        @include positionStyle(relative, 45%, 100%);
+        .mainlyNews{
+            @include positionStyle(relative, 100%, 39%);
+            float: left;
+            background-color: #fff;
+        }
+        .oneNews{
+            @include positionStyle(relative, 100%, 20%);
+            float: left;
+            margin-left: 0.2%;
+            background-color: #fff;
+        }
+        .twoNews{
+            @include positionStyle(relative, 100%, 20%);
+            float: left;
+            margin-left: 0.2%;
+            background-color: #fff;
+        }
+        .threeNews{
+            @include positionStyle(relative, 100%, 20%);
+            float: left;
+            margin-left: 0.2%;
+            background-color: #fff;
+      }
+      
+    }
+
+    .NameNews{
+      color: #fff;
+      font-size: 1.3rem;
+      margin-top: 0.5%;
+      margin-bottom: 0.5%;
+    }
+    
+    .podcastMDS{
+        @include positionStyle(relative, 45%, 100%);
+        overflow: hidden;
+        .track{
+            @include positionStyle(relative, 100%, 19.5%);
+            background-color: $Orange;
+            margin-right: 0.5%;
+            margin-top: 0.5%;
+            float: left;
+            .informationTrack{
+                @include positionStyle(absolute, 20%, 100%);
+                background-color: $Purple_Light;
+                bottom: 0;
+                .trackName{
+                    @include positionStyle(absolute, 50%, 65%);
+                    color: #fff;
+                    font-size: 1.2em;
+                    right: 0;
+                    top: 0;
+                }
+                .authorName{
+                    @include positionStyle(absolute, 30%, 65%);
+                    color: #fff;
+                    font-size: 0.6em;
+                    bottom: 15%;
+                    right: 0;
+                }
+            }
+            .authorImg{
+                @include positionStyle(absolute, 60px, 60px);
+                border-radius: 50%;
+                background-color: $Yellow_Light;
+                bottom: 2%;
+                left: 2%;
+                z-index: 2;
+            }
+        }
+    }
+}
