@@ -11,12 +11,33 @@
 
 //Fonts
 
-%fontMainly{
+%fontRegular{
     //poppins
-    @import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+    @import url('https://fonts.googleapis.com/css?family=Poppins:400,700,900&display=swap');;
+    font-family: 'Poppins', light;
 }
 
-%fontSub{
-    //roboto
-    @import url('https://fonts.googleapis.com/css?family=Gothic+A1&display=swap');
+%fontExtraBold{
+    //poppins
+    @import url('https://fonts.googleapis.com/css?family=Poppins:400,700,900&display=swap');;
+    font-family: 'Poppins';
+    font-weight: 900;
+}
+
+%fontNumber{
+    @import url('https://fonts.googleapis.com/css?family=Oswald:400,700&display=swap');
+    font-family: 'Oswald';
+}
+
+//functions
+
+@mixin positionStyle($position, $hg, $wd) {
+    position: $position;
+    height: $hg;
+    width: $wd;
+}
+
+@mixin iconStyle($color, $fontsize){
+    color: $color;
+    font-size: $fontsize;
 }
