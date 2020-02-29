@@ -2,10 +2,12 @@
   margin: 0;
   padding: 0;
   overflow: hidden;
+  scrollbar-width: none;
 }
 
 ::-webkit-scrollbar {
   width: 0px;
+  height: 0px;
   background: transparent; /* make scrollbar transparent */
 }
 
@@ -22,10 +24,11 @@ body{
     gap: 0px;
   }
     .grid_aside{
-      grid-column: 1/1;
+      grid-column: 1/2;
       grid-row: 1/6;
       background-color: $Purple_Light;
       @include positionStyle(relative, 100vh, 100%);
+      overflow: scroll;
     }
     .grid_div{
       grid-column: 2/2;
@@ -95,7 +98,7 @@ body{
       font-size: 0.9em;
   }
   .followUser p{
-    font-size: 2.4em;
+    font-size: 2.2em;
   }
 
   .followingUser{
@@ -106,27 +109,28 @@ body{
       font-size: 0.9em;
 }
   .followingUser p{
-    font-size: 2.4em;
+    font-size: 2.2em;
   }
 
 }
 
+.barFriends{
+    @include positionStyle(relative, 4%, 100%);
+    background-color: $Yellow_Dark;
+    margin-top: 2%;
+}
+.barFriends p{
+    color: #fff;
+    margin-left: 10%;
+}
+.sideColum{
+    @include positionStyle(absolute, 100%, 10%);
+    float: left;
+    background-color: $Purple_Dark;
+}
+
 .friendsContainer{
     @include positionStyle(relative, 100%, 100%);
-    .sideColum{
-        @include positionStyle(absolute, 55%, 10%);
-        float: left;
-        background-color: $Purple_Dark;
-    }
-    .barFriends{
-        @include positionStyle(relative, 4%, 100%);
-        background-color: $Yellow_Dark;
-        margin-top: 2%;
-    }
-    .barFriends p{
-      color: #fff;
-      margin-left: 10%;
-  }
     .friends{
         @include positionStyle(relative, 10%, 100%);
         .wrapperFriend{
