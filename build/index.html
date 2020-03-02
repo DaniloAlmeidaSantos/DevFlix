@@ -3,7 +3,12 @@
 <head>
     <title>DevFlix</title>
     <meta charset="UTF-8">
-    <script src="bundle.js"></script>    
+    <script src="bundle.js"></script>
+        <script>
+            // function buttonPerson(){
+            //     document.getElementById("containerMain").style.display = "none";
+            // }
+        </script>    
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
@@ -94,35 +99,57 @@
                         <div class="friendName">Juliahduisahduisahduhsaudhsa</div>
                         <div class="friendStatus">status testanto dsadsa</div>
                     </div>
+
+                    <div class="friends">
+                        <div class="wrapperFriend">
+                            <div class="friend_On_or_Off"></div>
+                        </div>
+                        <div class="friendImage"></div>
+                        <div class="friendName">Juliahduisahduisahduhsaudhsa</div>
+                        <div class="friendStatus">status testanto dsadsa</div>
+                    </div>
+
+                    <div class="friends">
+                        <div class="wrapperFriend">
+                            <div class="friend_On_or_Off"></div>
+                        </div>
+                        <div class="friendImage"></div>
+                        <div class="friendName">Juliahduisahduisahduhsaudhsa</div>
+                        <div class="friendStatus">status testanto dsadsa</div>
+                    </div>
+
+                    <div class="friends">
+                        <div class="wrapperFriend">
+                            <div class="friend_On_or_Off"></div>
+                        </div>
+                        <div class="friendImage"></div>
+                        <div class="friendName">Juliahduisahduisahduhsaudhsa</div>
+                        <div class="friendStatus">status testanto dsadsa</div>
+                    </div>
             </div>
         </div>
-
-
-
         <div class="grid_div">
             <div class="iconbarContainer">
-                <button>
+                <button onclick="return tabpagePerson(event)">
                     <i class="material-icons" id="personIcon">person</i>
                 </button>
-                <button>
+                <button onclick="return tabpageHome(event)">
                     <i class="material-icons" id="homeIcon">home</i>
                 </button>
-                <button>
+                <button id="buttonHeadset">
                     <i class="material-icons" id="headsetIcon">headset</i>
                 </button>
-                <button>
+                <button id="buttonMusic">
                     <i class="material-icons" id="queue_musicIcon">queue_music</i>
                 </button>
-                <button>
+                <button id="buttonSettings">
                     <i class="material-icons" id="settingsIcon">settings</i>
                 </button>
             </div>
         </div>
-
-
-
+        
         <div class="grid_main">
-            <div class="containerMain">
+            <div id="containerMainUser" class="containerMainUser">
                 <div class="mainNews">
                     <div class="mainlyNews"></div>
                     <div class="oneNews"></div>
@@ -136,96 +163,9 @@
 
                 <div class="podcastMDS">
                     <div class="track">
-                        <div class="authorImg"></div>
-                        <div class="informationTrack">
-                            <div class="trackName">Teste - teste</div>
-                            <div class="authorName">Uploaded by: zezinho</div>
+                        <div class="hoverTrack">
+                            <button class="playTrack"><i class="material-icons" id="play_circle_outline">play_circle_outline</i></button>
                         </div>
-                    </div>
-
-                    <div class="track">
-                        <div class="authorImg"></div>
-                        <div class="informationTrack">
-                            <div class="trackName">Teste - teste</div>
-                            <div class="authorName">Uploaded by: zezinho</div>
-                        </div>
-                    </div>
-
-                    <div class="track">
-                        <div class="authorImg"></div>
-                        <div class="informationTrack">
-                            <div class="trackName">Teste - teste</div>
-                            <div class="authorName">Uploaded by: zezinho</div>
-                        </div>
-                    </div>
-
-                    <div class="track">
-                        <div class="authorImg"></div>
-                        <div class="informationTrack">
-                            <div class="trackName">Teste - teste</div>
-                            <div class="authorName">Uploaded by: zezinho</div>
-                        </div>
-                    </div>
-
-                    <div class="track">
-                        <div class="authorImg"></div>
-                        <div class="informationTrack">
-                            <div class="trackName">Teste - teste</div>
-                            <div class="authorName">Uploaded by: zezinho</div>
-                        </div>
-                    </div>
-
-                    <div class="track">
-                        <div class="authorImg"></div>
-                        <div class="informationTrack">
-                            <div class="trackName">Teste - teste</div>
-                            <div class="authorName">Uploaded by: zezinho</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="podcastMDS">
-                    <div class="track">
-                        <div class="authorImg"></div>
-                        <div class="informationTrack">
-                            <div class="trackName">Teste - teste</div>
-                            <div class="authorName">Uploaded by: zezinho</div>
-                        </div>
-                    </div>
-
-                    <div class="track">
-                        <div class="authorImg"></div>
-                        <div class="informationTrack">
-                            <div class="trackName">Teste - teste</div>
-                            <div class="authorName">Uploaded by: zezinho</div>
-                        </div>
-                    </div>
-
-                    <div class="track">
-                        <div class="authorImg"></div>
-                        <div class="informationTrack">
-                            <div class="trackName">Teste - teste</div>
-                            <div class="authorName">Uploaded by: zezinho</div>
-                        </div>
-                    </div>
-
-                    <div class="track">
-                        <div class="authorImg"></div>
-                        <div class="informationTrack">
-                            <div class="trackName">Teste - teste</div>
-                            <div class="authorName">Uploaded by: zezinho</div>
-                        </div>
-                    </div>
-
-                    <div class="track">
-                        <div class="authorImg"></div>
-                        <div class="informationTrack">
-                            <div class="trackName">Teste - teste</div>
-                            <div class="authorName">Uploaded by: zezinho</div>
-                        </div>
-                    </div>
-
-                    <div class="track">
                         <div class="authorImg"></div>
                         <div class="informationTrack">
                             <div class="trackName">Teste - teste</div>
@@ -234,9 +174,11 @@
                     </div>
                 </div>
             </div>
+
+            <div id="containerMainPerson" class="containerMainPerson">
+                <div class="header"></div>
+            </div>
         </div>
-
-
 
         <div class="grid_header">
             <div class="headerContainer">
@@ -250,8 +192,6 @@
             </div>
         </div>
 
-
-        
         <div class="grid_footer">5</div>
     </div>
 </body>

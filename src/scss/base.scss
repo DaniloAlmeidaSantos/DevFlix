@@ -173,6 +173,7 @@ body{
 
 .headerContainer{
     @include positionStyle(relative, 100%, 100%);
+    display: initial;
     .appName{
         @include positionStyle(relative, 100%, 7%);
         left: 5%;
@@ -266,7 +267,7 @@ body{
   transition: 1s;
 }
 
-.containerMain{
+.containerMainUser{
     @include positionStyle(relative, 100%, 91%);
     margin: auto;
     overflow-y: scroll;
@@ -315,6 +316,28 @@ body{
             margin-right: 0.5%;
             margin-top: 0.5%;
             float: left;
+            .hoverTrack{
+                @include positionStyle(relative, 100%, 100%);
+                opacity: 0;
+                transition: 0.5s;
+                z-index: 3;
+                background-color:rgba(0, 0, 0, 0.8);
+                button{
+                    @include positionStyle(relative, 100%, 100%);
+                    text-decoration: none;
+                    outline: none;
+                    background-color: transparent;
+                    cursor: pointer;
+                    #play_circle_outline{
+                      font-size: 8rem;
+                      color: #fff;
+                    }
+                }
+            }
+            .hoverTrack:hover{
+                transition: 0.3s;
+                opacity: 1;
+            }
             .informationTrack{
                 @include positionStyle(absolute, 20%, 100%);
                 background-color: $Purple_Light;
@@ -338,10 +361,24 @@ body{
                 @include positionStyle(absolute, 60px, 60px);
                 border-radius: 50%;
                 background-color: $Yellow_Light;
-                bottom: 2%;
+                bottom: 3.5%;
                 left: 2%;
                 z-index: 2;
             }
         }
+    }
+}
+
+#containerMainPerson{
+    display: none;
+}
+
+.containerMainPerson{
+    @include positionStyle(relative, 100%, 91%);
+    margin: auto;
+    overflow-y: scroll;
+    .header{
+      @include positionStyle(relative, 100%, 91%);
+        background-color: #fff;
     }
 }

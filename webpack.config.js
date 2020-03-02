@@ -4,9 +4,16 @@ module.exports = {
     module:{
         rules:[
         {
-            test: /\.ts$/,
-            include: [path.resolve(__dirname, 'src/ts')],
-            loader: 'ts-loader'
+            test: /\.m?js$/,
+            include: [path.resolve(__dirname, 'src/js')],
+            exclude: /(node_modules|bower_components)/,
+            use: {
+                loader: 'babel-loader',
+                options: {
+                    presets: ['@babel/preset-env'],
+                    plugins: ['@babel/plugin-proposal-object-rest-spread']               }
+            }
+        
         },
         {
             test:/\.css$/,
@@ -23,16 +30,17 @@ module.exports = {
     output:{
         path: path.resolve(__dirname, './build'),
         filename: 'bundle.js',
-        
     },
     devtool: 'source-map',
+    optimization: {
+        minimize: false
+    },
     resolve:{
-        extensions:[".js",".json",".jsx",".css",".ts","webpack.js",".scss"],
+        extensions:[".js",".json",".jsx",".css","webpack.js",".scss"],
         alias:{
-            '@helpers': path.resolve(__dirname,'src/ts/helpers'),
             'css': path.resolve(__dirname, 'src/css'),
-            'scss': path.resolve(__dirname, 'src/scss')
+            'scss': path.resolve(__dirname, 'src/scss'),
+            'js': path.resolve(__dirname, 'src/js')
         }
     },
-    
 }
