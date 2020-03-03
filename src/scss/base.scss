@@ -62,7 +62,6 @@ body{
         border-radius: 60%;
         filter: hue-rotate(5deg);
         background-color: $Yellow_Light;
-        
     }
     .imgUserFront{
         @include positionStyle(absolute, 140px, 140px);
@@ -71,10 +70,6 @@ body{
         left: 3%;
         top: 2.5%;
     }   
-  @keyframes colorfull {
-      from { filter: hue-rotate(5deg); }
-      to { filter: hue-rotate(360deg); }
-  }
 }
 
 .nameUser{
@@ -218,11 +213,14 @@ body{
         position: relative;
         margin-top: 9%;
         margin-bottom: 59%;
+        
     }
     #personIcon:hover{
       color: $Orange;
-      transition: 0.3s;
+      transition: 2s;
+      animation: rotateButton 1s 0s normal forwards;
     }
+
     #homeIcon{
       @include iconStyle($Purple_Light, 2.9em);
       position: relative;
@@ -230,7 +228,8 @@ body{
     }
     #homeIcon:hover{
       color: $Orange;
-      transition: 0.3s;
+      transition: 2s;
+      animation: rotateButton 1s 0s normal forwards;
     }
     #headsetIcon{
       @include iconStyle($Purple_Light, 2.9em);
@@ -239,7 +238,8 @@ body{
     }
     #headsetIcon:hover{
       color: $Orange;
-      transition: 0.3s;
+      transition: 2s;
+      animation: rotateButton 1s 0s normal forwards;
     }
     #queue_musicIcon{
       @include iconStyle($Purple_Light, 2.9em);
@@ -248,7 +248,8 @@ body{
     }
     #queue_musicIcon:hover{
       color: $Orange;
-      transition: 0.3s;
+      transition: 2s;
+      animation: rotateButton 1s 0s normal forwards;
     }
 
     #settingsIcon{
@@ -258,7 +259,8 @@ body{
     }
     #settingsIcon:hover{
       color: $Orange;
-      transition: 0.3s;
+      transition: 2s;
+      animation: rotateButton 1s 0s normal forwards;
     }
 }
 
@@ -270,7 +272,7 @@ body{
 .containerMainUser{
     @include positionStyle(relative, 100%, 91%);
     margin: auto;
-    overflow-y: scroll;
+    overflow: scroll;
     .mainNews{
         margin-top: 0.5%;
         @include positionStyle(relative, 45%, 100%);
@@ -307,9 +309,10 @@ body{
       margin-bottom: 0.5%;
     }
     
+
     .podcastMDS{
         @include positionStyle(relative, 45%, 100%);
-        overflow: hidden;
+        overflow-x: scroll;
         .track{
             @include positionStyle(relative, 100%, 19.5%);
             background-color: $Orange;
@@ -329,8 +332,13 @@ body{
                     background-color: transparent;
                     cursor: pointer;
                     #play_circle_outline{
-                      font-size: 8rem;
-                      color: #fff;
+                        font-size: 8rem;
+                        color: #fff;
+                        transition: 0.5s;
+                    }
+                    #play_circle_outline:active{
+                        transition: 0.5s;
+                        font-size: 10rem;
                     }
                 }
             }
@@ -342,6 +350,7 @@ body{
                 @include positionStyle(absolute, 20%, 100%);
                 background-color: $Purple_Light;
                 bottom: 0;
+                float: left;
                 .trackName{
                     @include positionStyle(absolute, 50%, 65%);
                     color: #fff;
@@ -381,4 +390,46 @@ body{
       @include positionStyle(relative, 100%, 91%);
         background-color: #fff;
     }
+}
+
+#containerMainHeadPhone{
+  display: none;
+}
+
+.containerMainHeadPhone{
+  @include positionStyle(relative, 100%, 91%);
+  margin: auto;
+  overflow-y: scroll;
+  .header{
+    @include positionStyle(relative, 100%, 91%);
+      background-color: #fff;
+  }
+}
+
+#containerMainPlaylist{
+  display: none;
+}
+
+.containerMainPlaylist{
+  @include positionStyle(relative, 100%, 91%);
+  margin: auto;
+  overflow-y: scroll;
+  .header{
+    @include positionStyle(relative, 100%, 91%);
+      background-color: #fff;
+  }
+}
+
+#containerMainSettings{
+  display: none;
+}
+
+.containerMainSettings{
+  @include positionStyle(relative, 100%, 91%);
+  margin: auto;
+  overflow-y: scroll;
+  .header{
+    @include positionStyle(relative, 100%, 91%);
+      background-color: #fff;
+  }
 }
