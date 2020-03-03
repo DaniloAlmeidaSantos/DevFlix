@@ -57,3 +57,10 @@ window.tabpageSettings = function buttonPerson(){
     document.getElementById("containerMainPerson").style.display = "none";
     document.getElementById("containerMainPlaylist").style.display = "none";
 }
+
+
+
+
+
+
+
