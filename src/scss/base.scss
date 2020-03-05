@@ -313,7 +313,6 @@ body{
       margin-bottom: 0.5%;
     }
     
-
     .podcastMDS{
         @include positionStyle(relative, 45%, 100%);
         overflow-x: scroll;
@@ -387,13 +386,10 @@ body{
 }
 
 .containerMainPerson{
-    @include positionStyle(relative, 100%, 91%);
+    @include positionStyle(static, 100%, 91%);
     margin: auto;
     overflow-y: scroll;
-    .header{
-      @include positionStyle(relative, 100%, 91%);
-        background-color: #fff;
-    }
+         
 }
 
 #containerMainHeadPhone{
@@ -404,10 +400,88 @@ body{
   @include positionStyle(relative, 100%, 91%);
   margin: auto;
   overflow-y: scroll;
-  .header{
-    @include positionStyle(relative, 100%, 91%);
-      background-color: #fff;
+  .itens{
+    display: flex;
+    overflow-x: scroll;
+    scrollbar-width: initial;
+}
+.itens .item{
+  min-width: 200px;
+  height: 300px;
+  margin: 5px;
+  .podcastBanner{
+      @include positionStyle(relative, 100%, 100%);
+      float: left;
+      img{
+        width: 200px;
+        height: 300px;
+      }
+      img:hover{
+        transition: 0.3s;
+        width: 220px;
+        height: 320px;
+      }
+    }
+    .containerInfo{
+      @include positionStyle(absolute, 25%, 100%);
+      background-color:rgba(26, 9, 41, 0.7);
+      bottom: 0;
+      left: 0;
+   }
+   .podcastName{
+      @include positionStyle(relative, 35%, 65%);
+      font-size: 1.2em;
+      color: #fff;
+      margin-top: 1%;
+      margin-left: 3%;
+      float: left;
+    }
+    .podcastDesc{
+        @include positionStyle(relative, 60%, 65%);
+        color: #fff;
+        font-size: 0.6em;
+        margin-top: 0.5%;
+        margin-left: 3%;
+        float: left;
+        word-wrap: break-all;
+    }
+    .podcastView{
+      @include positionStyle(relative, 100%, 32%);
+      i {
+        @include positionStyle(absolute, 40%, 100%);
+        color: #ef4b50;
+        font-size: 2em;
+        left: 24%;
+        top: 10%;
+      }
+      p {
+        @include positionStyle(relative, 40%, 100%);
+        color: #fff;
+        font-size: 1em;
+        text-align: center;
+        margin-top: 65%;
+      }
   }
+}
+}
+
+.itens::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+  background: $Orange; /* make scrollbar transparent */
+}
+
+.itens::-webkit-scrollbar-button {
+  width: 12px;
+  height: 12px;
+  background: $Purple_Dark; /* make scrollbar transparent */
+}
+
+.itens::-webkit-scrollbar-thumb {
+  width: 3px;
+  height: 10px;
+  border-radius: 6px;
+  background: $Purple_Light; /* make scrollbar transparent */
 }
 
 #containerMainPlaylist{
@@ -415,13 +489,81 @@ body{
 }
 
 .containerMainPlaylist{
-  @include positionStyle(relative, 100%, 91%);
-  margin: auto;
-  overflow-y: scroll;
-  .header{
-    @include positionStyle(relative, 100%, 91%);
-      background-color: #fff;
-  }
+    @include positionStyle(relative, 100%, 95%);
+    .namePlaylist{
+        @include positionStyle(relative, 6%, 100%);
+        background-color: $Orange;
+        p{
+            @include positionStyle(relative, 100%, 100%);
+            font-size: 1.2em;
+            margin-left: 2%;
+            color: #fff;
+        }
+    }
+    .sidePlaylist{
+        @include positionStyle(relative, 100%, 20%);
+        overflow-y: scroll;
+        background-color: $BackgroundColor_Dark;
+        float: left;
+        animation: easeColorContainer 2s 0s normal forwards;
+    }
+    .albunsPlaylist{
+        @include positionStyle(relative, 100px, 47%);
+        background-color: $Orange;
+        margin: 2% 0.5% 0% 2%;
+        float: left;
+    }
+    .namePlaylist_b{
+        @include positionStyle(relative, 6%, 73%);
+        background-color: $Orange;
+        left: 1%;
+        p{
+            @include positionStyle(relative, 100%, 100%);
+            font-size: 1.2em;
+            margin-left: 2%;
+            color: #fff;
+        }
+    }
+    .playlist{
+        @include positionStyle(relative, 100%, 73%);
+        background-color: $BackgroundColor_Dark;
+        overflow-y: scroll;
+        left: 1%;
+        animation: easeColorContainer 2s 0s normal forwards;
+        table{
+            @include positionStyle(relative, 10%, 98%);
+            color: #fff;
+            margin: auto;
+            border-spacing: 0px 4px;
+        }
+        tr td{
+            background-color: $BackgroundColor_EvenDark;
+            padding: 3px;
+            animation: easeColor 2s 0s normal forwards;
+        }
+        .centerCell{
+            text-align: center;
+            padding-right: 2%;
+            padding-left: 2%;
+            button{
+                text-decoration: none;
+                outline: none;
+                background-color: transparent;
+                cursor: pointer;
+                transition: 2s;
+                i{
+                  color: #fff;
+                  font-size: 2.5em;
+                  margin-top: 10%;
+                }
+                i:active{
+                  color: $Yellow_Light;
+                  transition: 0.2s;
+                }
+            }
+            
+        }
+    }
 }
 
 #containerMainSettings{

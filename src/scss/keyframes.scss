@@ -7,3 +7,13 @@
     from { filter: hue-rotate(5deg); }
     to { filter: hue-rotate(360deg); }
 }
+
+@keyframes easeColorContainer {
+    from { background-color: $BackgroundColor; }
+    to { background-color: $BackgroundColor_Dark; }
+}
+
+@keyframes easeColor {
+    from { background-color: $BackgroundColor; }
+    to { background-color: $BackgroundColor_EvenDark; }
+}
