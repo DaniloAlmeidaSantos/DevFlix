@@ -16,6 +16,80 @@ body{
   @extend %fontNumber;
 }
 
+#player{
+    @include positionStyle(relative, 100vh, 10%);
+    margin-left: 4%;
+    margin-top: 0.4%;
+    float: left;
+    a{
+        i{
+            @include positionStyle(relative, 5%, 30%);
+            font-size: 2.5em;
+            color: #fff;
+            text-align: center;
+        }
+    }
+  }
+
+.musicContent{
+    @include positionStyle(relative, 100%, 60%);
+    bottom: 3%;
+    color: #fff;
+    float: left;
+    .wrappperTitle{
+      width: 80%;
+      margin-top: 0.5%;
+      margin-left: 5%;
+    }
+    .title{
+      animation: slideText 30s 0s normal infinite;
+      text-align: center; 
+      font-size: 1em;
+      white-space: nowrap;
+    }
+    #seekbar{
+        @include positionStyle(absolute, 55%, 100%);
+        left: 3%;
+        bottom: 0;
+    }
+    .current-duration{
+        position: absolute;
+        top: 15%;
+        right: 6%;
+        font-size: 80%;
+    }
+    .total-duration{
+      position: absolute;
+      top: 15%;
+      right: 0;
+      font-size: 80%;
+  }
+    
+}
+
+#mute{
+  position: absolute;
+  right: 10%;
+  margin-top: 0.4%;
+  color: white;
+  font-size: 2em;
+}
+
+#vol-control{
+  position: absolute;
+  right: 4.5%;
+  margin-top: 0.8%;
+  width: 5%;
+}
+
+#playlist_add{
+  position: absolute;
+  margin-top: 0.3%;
+  margin-left: 1.5%;
+  font-size: 2.3em;
+  color: #fff;
+}
+
 .grid_Wrapper{
   display: grid;
   grid:{ 
@@ -388,9 +462,93 @@ body{
 .containerMainPerson{
     @include positionStyle(static, 100%, 91%);
     margin: auto;
-    overflow-y: scroll;
-         
+    overflow: hidden;
+    .trackWrapper{
+        @include positionStyle(relative, 100%, 50%);
+        float: left;
+        .addtrackDesc{
+            @include positionStyle(static, 7%, 90%);
+            color: #fff;
+            font-size: 1.3em;
+            text-align: center;
+      }
+        .addingTrack{
+            @include positionStyle(relative, 80%, 90%);
+            background-color: $BackgroundColor_Dark;
+            top: 0%;
+      }
+        .btnAddTrack{
+            @include positionStyle(relative, 6%, 45%);
+            background-color: #13641d;
+            text-decoration: none;
+            outline: none;
+            cursor: pointer;
+            p{
+                font-size: 1.3em;
+            }
+        }
+        .btnAddtoPlaylist{
+          @include positionStyle(relative, 6%, 45%);
+          background-color: $Purple_Light;
+          color: #fff;
+          text-decoration: none;
+          outline: none;
+          cursor: pointer;
+          p{
+              font-size: 1.3em;
+          }
+      }
+
+        .btnAddtoPlaylist:hover{
+          @include positionStyle(relative, 6%, 45%);
+          background-color: #ef4b50;
+          text-decoration: none;
+          outline: none;
+          cursor: pointer;
+          p{
+              font-size: 1.3em;
+          }
+      }
+    }
+    .playlistWrapper{
+        @include positionStyle(relative, 100%, 50%);
+        .addplaylistDesc{
+          @include positionStyle(static, 7%, 90%);
+          color: #fff;
+          font-size: 1.3em;
+          text-align: center;
+      }
+        .addingPlaylist{
+          @include positionStyle(relative, 80%, 90%);
+          background-color: $BackgroundColor_Dark;
+          top: 0%;
+      }
+      .btnCreatePlaylist{
+          @include positionStyle(relative, 6%, 90%);
+            background-color: $Purple_Light;
+            text-decoration: none;
+            outline: none;
+            cursor: pointer;
+            p{
+                font-size: 1.3em;
+            }
+      }
+      .btnCreatePlaylist:hover{
+        @include positionStyle(relative, 6%, 90%);
+          background-color: #13641d;
+          color: #fff;
+          transition: 0.5s;
+          text-decoration: none;
+          outline: none;
+          cursor: pointer;
+          p{
+              font-size: 1.3em;
+          }
+       }
+    }
 }
+
+
 
 #containerMainHeadPhone{
   display: none;
@@ -561,7 +719,6 @@ body{
                   transition: 0.2s;
                 }
             }
-            
         }
     }
 }

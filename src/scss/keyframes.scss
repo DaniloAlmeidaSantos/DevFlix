@@ -17,3 +17,8 @@
     from { background-color: $BackgroundColor; }
     to { background-color: $BackgroundColor_EvenDark; }
 }
+
+@keyframes slideText{
+    from { margin-left: 5%; }
+    to { margin-left: -100%; }
+}
