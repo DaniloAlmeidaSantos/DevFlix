@@ -57,13 +57,6 @@
         
         <div class="grid_main">
             <div id="containerMainUser" class="containerMainUser">
-                <div class="mainNews">
-                    <div class="mainlyNews"></div>
-                    <div class="oneNews"></div>
-                    <div class="twoNews"></div>
-                    <div class="threeNews"></div>
-                </div>
-
                 <div class="NameNews">
                     Melhores PodCasts da semana:
                 </div>
@@ -127,24 +120,188 @@
             </div>
 
             <div id="containerMainPerson" class="containerMainPerson">
-                <div class="trackWrapper">
-                    <div class="addtrackDesc">Fazer upload de Podcast:</div>
-                    <div class="addingTrack">
-                        
+                
+                <div class="wrapperMainPerson">
+                    <div class="titleYourPlaylist">Playlist feitas por você</div>
+                    <div class="sideYourPlaylists">
+                        <div class="sideYourAlbuns">
+                            <img src="" alt="">
+                        </div>
+                        <div class="sideYourAlbuns">
+                            <img src="" alt="">
+                        </div>
                     </div>
-                    <button class="btnAddTrack"><p>Adicionar PodCast</p></button>
-                    <button class="btnAddtoPlaylist"><p>Adicionar PodCast</p></button>
+                    <div onclick="return showPlaylistModal(event)" class="btnCreatePlaylist"><i class="material-icons">add</i></div>
                 </div>
-                <div class="playlistWrapper">
-                    <div class="addplaylistDesc">Criar Playlist:</div>
-                    <div class="addingPlaylist">
-                        
+                <div class="wrapperUploadPodcast">
+                    <div class="titleYourPlaylist2">Sua Playlist, faça um upload!</div>
+                    <div class="infoPlaylist">
+                        <div class="wrapperAlbumImg">
+                            <div class="imgAlbum">
+                                <img src="" alt="">
+                            </div>
+                        </div>
+                        <h1 class="namePodcast">Exemplo do nome de um podcast</h1>
+                        <p class="nameProducer">Por: Exemplo do nome de um podcast</p>
+                        <p class="nameDesc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt tempore sint iste quidem exercitationem perspiciatis earum provident! Placeat corporis quas fuga enim totam culpa sapiente porro iste, nostrum vero laborum.</p>
+                        <button onclick="return btnshowModalPodcast(event)">Fazer upload de Podcast</button>
                     </div>
-                    <button class="btnCreatePlaylist"><p>Adicionar PodCast</p></button>
+                    
+                    <div class="uploadPodcast">
+                        <table>
+                            <tr>
+                                <td>Título:</td>
+                                <td>Artista:</td>
+                                <td>Data:</td>
+                            </tr>
+                            <tr>
+                                <td>PodCast1: O exemplo difente</td>
+                                <td>deconhecido</td>
+                                <td>2020-02-20 20:01:20</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="btnUptoBank"><i class="material-icons">check</i></div>
                 </div>
             </div>
 
+            <!-- modal -->
+
+            <div class="modalMainPerson">
+                <div class="form">
+                    <div class="wrapperModal">
+                        <h5 class="modalTitle">Criar Playlist 
+                            <button><i class="material-icons" id="btnclose" onclick="return closePlaylistModal(event)">close</i></button>
+                        </h5>
+                        <form action="">
+                            <label for="fnameP">Nome da Playlist:</label>
+                            <br>
+                            <input type="text" id="fnameP">
+                            <br>
+                            <label for="fmentions">Houve outros participantes? mencione-os:</label>
+                            <br>
+                            <input type="text" id="fmentions">
+                            <br>
+                            <label for="fdesc">Descrição da Playlist:</label>
+                            <br>
+                            <textarea name="" id="fdesc" cols="30" rows="10" maxlength="360"></textarea>
+
+                            <div class="WrapperImgPlaylist">
+                                <div class="modalUpImg">
+                                    <img src="" alt="">
+                                </div>
+                                <input type="file">
+                                <input type="submit" value="submit">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modalMainPersonConfirm">
+                <div class="formConfirm">
+                    <div class="wrapperModalConfirm">
+                        <h5 class="modalTitleConfirm">Inserir PodCast: 
+                            <button><i class="material-icons" id="btnclose" onclick="return closePodCastModal(event)">close</i></button>
+                        </h5>
+                        <form action="">
+                            <label for="fnameP">Nome da PodCast:</label>
+                            <br>
+                            <input type="text" id="fnameP">
+                            <br>
+                            <label for="fmentions">Houve outros participantes? mencione-os:</label>
+                            <br>
+                            <input type="" id="fmentions">
+                            <br>
+                            <label for="fmentions">Pertence a qual gênero:</label>
+                            <br>
+
+                            <select name="" id="fmentions">
+                                <option value="Sports">Esportes</option>
+                                <option value="Religião">Religião</option>
+                                <option value="History">Educação</option>
+                                <option value="Teclonogy">Tecnologia</option>
+                                <option value="News">Notícias</option>
+                                <option value="International News">Notícias Internacionais</option>
+                                <option value="International News">História Fantasia</option>
+                            </select>
+
+                            <label for="fmentions">Escolha seu PodCast, lembrando precisa ser mp3:</label>
+                            <center><input type="file"></center>
+                            <br><br><br><br><br><br>
+                            <center><input type="submit" id="btninsert" value="Inserir PodCast"></center>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- modal -->
+
             <div id="containerMainHeadPhone" class="containerMainHeadPhone">
+                <div class="mainNews">
+                    <div class="category1"></div>
+                    <div class="category2"></div>
+                    <div class="category3"></div>
+                    <div class="category4"></div>
+                    <div class="category5"></div>
+                </div>
+
+                <h3>Playlists mais populares:</h3>
+
+                <div class="itens">
+                    <div class="item">
+                        <div class="podcastBanner">
+                            <img src="img/capa_img/harrypotter.jpg">
+                            <div class="containerInfo">
+                                <div class="podcastName">PodCast Exemplo</div>
+                                <div class="podcastDesc">conheça o podcast mais famoso de nossa plataforma e tambem o que ele pode te porporcionar para uma vida ainda melhor</div>
+                                <div class="podcastView">
+                                    <i class="material-icons" id="whatshot">whatshot</i>
+                                    <p>30k</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Talvez você goste:</h3>
+
+                <div class="itens">
+                    <div class="item">
+                        <div class="podcastBanner">
+                            <img src="img/capa_img/harrypotter.jpg">
+                            <div class="containerInfo">
+                                <div class="podcastName">PodCast Exemplo</div>
+                                <div class="podcastDesc">conheça o podcast mais famoso de nossa plataforma e tambem o que ele pode te porporcionar para uma vida ainda melhor</div>
+                                <div class="podcastView">
+                                    <i class="material-icons" id="whatshot">whatshot</i>
+                                    <p>30k</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>O melhor do Futebol:</h3>
+
+                <div class="itens">
+                    <div class="item">
+                        <div class="podcastBanner">
+                            <img src="img/capa_img/harrypotter.jpg">
+                            <div class="containerInfo">
+                                <div class="podcastName">PodCast Exemplo</div>
+                                <div class="podcastDesc">conheça o podcast mais famoso de nossa plataforma e tambem o que ele pode te porporcionar para uma vida ainda melhor</div>
+                                <div class="podcastView">
+                                    <i class="material-icons" id="whatshot">whatshot</i>
+                                    <p>30k</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Histórias Empolgantes:</h3>
+
                 <div class="itens">
                     <div class="item">
                         <div class="podcastBanner">
@@ -195,7 +352,11 @@
             </div>
 
             <div id="containerMainSettings" class="containerMainSettings">
-                <h1>Ldsuahjduiashiudhsaiuhdiudsadsadsadsadsadsadsadsadsadsasahdhsuais</h1>
+                <div class="leftInfoContainer">
+                    <div class="imgUser">
+                        <img src="" alt="">
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -232,8 +393,6 @@
                 <div class="wrappperTitle">
                     <h1 class="title">Pink Floid - Confortably Numb dhyisuahdusahdusahudhsauihdusahduisahdsahdhsadushauidhsauihdsauhduishaudhsauhdausi oi</h1>
                 </div>
-                
-                
                 <div id="current-duration" class="current-duration">00:00</div>
                 <input type="range" min="0" max="0" id="seekbar" step="1">
                 <div id="total-duration" class="total-duration">00:00</div>

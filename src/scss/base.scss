@@ -30,7 +30,7 @@ body{
         }
     }
   }
-
+  
 .musicContent{
     @include positionStyle(relative, 100%, 60%);
     bottom: 3%;
@@ -118,11 +118,13 @@ body{
       grid-column: 3/6;
       grid-row: 1/2;
       background-color: $Purple_Dark;
+      // animation: headerOut 2s 0s normal forwards;
     }
     .grid_footer{
       grid-column: 3/6;
       grid-row: 5/6;
       background-color: $Purple_Dark;
+      transition: 3s;
     }
 }
 
@@ -144,6 +146,7 @@ body{
         left: 3%;
         top: 2.5%;
         img{
+            @extend %SelectDisable;
             width: 100%;
             height: 100%;
         }
@@ -351,35 +354,6 @@ body{
     @include positionStyle(relative, 100%, 91%);
     margin: auto;
     overflow: scroll;
-    .mainNews{
-        margin-top: 0.5%;
-        @include positionStyle(relative, 45%, 100%);
-        .mainlyNews{
-            @include positionStyle(relative, 100%, 39%);
-            float: left;
-            background-color: #fff;
-        }
-        .oneNews{
-            @include positionStyle(relative, 100%, 20%);
-            float: left;
-            margin-left: 0.2%;
-            background-color: #fff;
-        }
-        .twoNews{
-            @include positionStyle(relative, 100%, 20%);
-            float: left;
-            margin-left: 0.2%;
-            background-color: #fff;
-        }
-        .threeNews{
-            @include positionStyle(relative, 100%, 20%);
-            float: left;
-            margin-left: 0.2%;
-            background-color: #fff;
-      }
-      
-    }
-
     .NameNews{
       color: #fff;
       font-size: 1.3rem;
@@ -390,6 +364,7 @@ body{
     .podcastMDS{
         @include positionStyle(relative, 45%, 100%);
         overflow-x: scroll;
+        margin-bottom: 1%;
         .track{
             @include positionStyle(relative, 100%, 19.5%);
             background-color: $Orange;
@@ -460,95 +435,351 @@ body{
 }
 
 .containerMainPerson{
-    @include positionStyle(static, 100%, 91%);
-    margin: auto;
-    overflow: hidden;
-    .trackWrapper{
-        @include positionStyle(relative, 100%, 50%);
+    @include positionStyle(relative, 100%, 100%);
+    .wrapperMainPerson{
+        @include positionStyle(relative, 100%, 20%);
         float: left;
-        .addtrackDesc{
-            @include positionStyle(static, 7%, 90%);
-            color: #fff;
-            font-size: 1.3em;
-            text-align: center;
-      }
-        .addingTrack{
-            @include positionStyle(relative, 80%, 90%);
+        .titleYourPlaylist{
+          @include positionStyle(relative, 5%, 100%);
+          background-color: $Orange;
+          color: #fff;
+          text-align: center;
+        }
+        .sideYourPlaylists{
+            @include positionStyle(relative, 94%, 100%);
+            overflow-y: scroll;
             background-color: $BackgroundColor_Dark;
-            top: 0%;
-      }
-        .btnAddTrack{
-            @include positionStyle(relative, 6%, 45%);
-            background-color: #13641d;
-            text-decoration: none;
-            outline: none;
-            cursor: pointer;
-            p{
-                font-size: 1.3em;
+            .sideYourAlbuns{
+              @include positionStyle(relative, 100px, 47%);
+              background-color: $Orange;
+              margin: 2% 0.5% 0% 2%;
+              float: left;
+          }
+        }
+        .btnCreatePlaylist{
+            @include positionStyle(absolute, 10%, 28%);
+            background-color: #1ca82d;
+            bottom: 2%;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 60%;
+            i {
+              position: absolute;
+              left: 50%;
+              top: 50%;
+              transform: translate(-50%, -50%);
+              color: #fff;
+              font-size: 2.5em;
+              cursor: pointer;
+              transition: 0.5s;
+            }
+            i:hover {
+              font-size: 3.3em;
+              cursor: pointer;
+              transition: 0.5s;
+              filter: drop-shadow(8px 10px 4px #000);
+              @extend %SelectDisable;
             }
         }
-        .btnAddtoPlaylist{
-          @include positionStyle(relative, 6%, 45%);
-          background-color: $Purple_Light;
-          color: #fff;
-          text-decoration: none;
-          outline: none;
-          cursor: pointer;
-          p{
-              font-size: 1.3em;
-          }
-      }
-
-        .btnAddtoPlaylist:hover{
-          @include positionStyle(relative, 6%, 45%);
-          background-color: #ef4b50;
-          text-decoration: none;
-          outline: none;
-          cursor: pointer;
-          p{
-              font-size: 1.3em;
-          }
-      }
     }
-    .playlistWrapper{
-        @include positionStyle(relative, 100%, 50%);
-        .addplaylistDesc{
-          @include positionStyle(static, 7%, 90%);
-          color: #fff;
-          font-size: 1.3em;
-          text-align: center;
-      }
-        .addingPlaylist{
-          @include positionStyle(relative, 80%, 90%);
-          background-color: $BackgroundColor_Dark;
-          top: 0%;
-      }
-      .btnCreatePlaylist{
-          @include positionStyle(relative, 6%, 90%);
-            background-color: $Purple_Light;
-            text-decoration: none;
-            outline: none;
-            cursor: pointer;
-            p{
-                font-size: 1.3em;
+    .wrapperUploadPodcast{
+        @include positionStyle(relative, 100%, 70%);
+        left: 1%;
+        .titleYourPlaylist2{
+            @include positionStyle(relative, 5%, 100%);
+            background-color: $Orange;
+            color: #fff;
+            text-align: center;
+        }
+        .infoPlaylist{
+            @include positionStyle(relative, 35%, 100%);
+            background-color: $BackgroundColor_Dark;
+            .wrapperAlbumImg{
+                @include positionStyle(relative, 100%, 25%);
+                float: left;
+                left: 1%;
+                top: 4%;
+                .imgAlbum{
+                    @include positionStyle(relative, 90%, 100%);
+                    float: left;
+                    background-color: #fff;
+                }
             }
-      }
-      .btnCreatePlaylist:hover{
-        @include positionStyle(relative, 6%, 90%);
-          background-color: #13641d;
-          color: #fff;
-          transition: 0.5s;
-          text-decoration: none;
-          outline: none;
-          cursor: pointer;
-          p{
-              font-size: 1.3em;
-          }
-       }
+            .namePodcast, .nameProducer, .nameDesc{
+              color: #fff;
+              position: relative;
+              left: 3%;
+              @extend %fontNumber;
+            }
+            .namePodcast{
+                font-size: 1.6em;
+            }
+            .nameProducer{
+              font-size: 1em;
+              margin-bottom: 2%;
+            }
+            .nameDesc{
+              width: 70%;
+              height: 40%;
+              font-size: 0.8em;
+              word-wrap: break-word;
+            }
+            button{
+              @include positionStyle(relative, 15%, 70%);
+              left: 3%;
+              margin-top: 1%;
+              background-color: $Yellow_Light;
+              color: #fff;
+              cursor: pointer;
+            } 
+            button:hover{
+              background-color: $Yellow_Dark;
+              border-style: solid;
+              border-color: $Yellow_Dark;
+              border-width: 15.5px;
+              animation: buttonAnima 1s 0s normal forwards;
+            } 
+        }
+        
+        .uploadPodcast{
+            @include positionStyle(relative, 58.5%, 100%);
+            background-color: $BackgroundColor_Dark;
+            top: 0.5%;
+            overflow: scroll;
+            table{
+              @include positionStyle(relative, 10%, 98%);
+              color: #fff;
+              margin: auto;
+              border-spacing: 0px 4px;
+            }
+            tr td{
+                background-color: $BackgroundColor_EvenDark;
+                padding: 3px;
+                animation: easeColor 2s 0s normal forwards;
+            }
+            .centerCell{
+                text-align: center;
+                padding-right: 2%;
+                padding-left: 2%;
+                button{
+                    text-decoration: none;
+                    outline: none;
+                    background-color: transparent;
+                    cursor: pointer;
+                    transition: 2s;
+                    i{
+                      color: #fff;
+                      font-size: 2.5em;
+                      margin-top: 10%;
+                    }
+                    i:active{
+                      color: $Yellow_Light;
+                      transition: 0.2s;
+                    }
+                }
+            }
+        }
+        .btnUptoBank{
+            @include positionStyle(absolute, 10%, 8%);
+            bottom: 2%;
+            left: 95%;
+            transform: translateX(-50%);
+            border-radius: 60%;
+            background-color: #1ca82d;
+            color: #fff;
+            i {
+              position: absolute;
+              left: 50%;
+              top: 50%;
+              transform: translate(-50%, -50%);
+              color: #fff;
+              font-size: 2.5em;
+              cursor: pointer;
+              transition: 0.5s;
+            }
+            i:hover {
+              font-size: 3.3em;
+              cursor: pointer;
+              transition: 0.5s;
+              filter: drop-shadow(8px 10px 3px #000);
+              @extend %SelectDisable;
+            }
+        }
     }
 }
 
+.modalMainPerson{
+    @include positionStyle(absolute, 100%, 100%);
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.0);
+    z-index: 1000;
+    display: none;
+    animation: black_background_modal 1.5s 0s normal forwards;
+    #btnclose{
+      position: absolute;
+      top: 2%;
+      right: 2%;
+      color: #fff;
+      cursor: pointer;
+      transition: 0.5s;
+    }
+    #btnclose:hover{
+      font-size: 2em;
+      cursor: pointer;
+      transition: 0.5s;
+      filter: drop-shadow(8px 5px 2px #000);
+      @extend %SelectDisable;
+    }
+    .form{
+        @include positionStyle(absolute, 85%, 50%);
+        background-color: $BackgroundColor;
+        top: 50%;
+        left: 50%;
+        transform: translate(-40%, -50%);
+        border-radius: 15px;
+        animation: form 1s 0s normal forwards;
+        h5{
+            text-align: center;
+            margin-top: 1%;
+            font-size: 1.7em;
+            color: #fff;
+            animation: anime_title 0.5s 0s normal forwards;
+        }
+        form{
+            @include positionStyle(relative, 95%, 95%);
+            margin: auto;
+            margin-top: 1%;
+            label{
+              color: #fff;
+              font-size: 1.2em;
+            }
+            #fnameP, #fmentions{
+                background-color: $BackgroundColor_EvenDark;
+                color: #fff;
+                width: 63%;
+                height: 25px;
+                border-radius: 10px;
+                margin-bottom: 3%;
+            }
+            #fdesc{
+                background-color: $BackgroundColor_EvenDark;
+                color: #fff;
+                width: 63%;
+                height: 280px;
+                border-radius: 10px;
+                resize: none;
+                // margin-bottom: 3%;
+            }
+            .WrapperImgPlaylist{
+                @include positionStyle(absolute, 98%, 35%);
+                top: 0;
+                right: 0;
+                .modalUpImg{
+                    @include positionStyle(relative, 50%, 100%);
+                    background-color: white;
+                    margin-top: 3%;
+                }
+                input:nth-child(2){
+                    margin-top: 3%;
+                    background-color: $BackgroundColor_EvenDark;
+                    color: #fff;
+                }
+                input:nth-child(3){
+                    position: absolute;
+                    bottom: 0;
+                    background-color: #1ca82d;
+                    color: #fff;
+                    width: 100%;
+                    height: 10%;
+                }
+            }
+        }
+    }
+}
 
+.modalMainPersonConfirm{
+  @include positionStyle(absolute, 100%, 100%);
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.0);
+  z-index: 1000;
+  display: none;
+  animation: black_background_modal 1.5s 0s normal forwards;
+  #btnclose{
+    position: absolute;
+    top: 2%;
+    right: 2%;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.5s;
+  }
+  #btnclose:hover{
+    font-size: 2em;
+    cursor: pointer;
+    transition: 0.5s;
+    filter: drop-shadow(8px 5px 2px #000);
+    @extend %SelectDisable;
+  }
+  .formConfirm{
+      @include positionStyle(absolute, 85%, 35%);
+      background-color: $BackgroundColor;
+      top: 50%;
+      left: 50%;
+      transform: translate(-40%, -50%);
+      border-radius: 15px;
+      animation: form 1s 0s normal forwards;
+      h5{
+          text-align: center;
+          margin-top: 1%;
+          font-size: 1.7em;
+          color: #fff;
+          animation: anime_title 0.5s 0s normal forwards;
+      }
+      form{
+          @include positionStyle(relative, 95%, 80%);
+          margin: auto;
+          margin-top: 1%;
+          label{
+            color: #fff;
+            font-size: 1.2em;
+          }
+          #fnameP, #fmentions{
+              background-color: $BackgroundColor_EvenDark;
+              color: #fff;
+              width: 100%;
+              height: 25px;
+              border-radius: 10px;
+              margin-bottom: 3%;
+              text-align: center;
+          }
+          #fdesc{
+              background-color: $BackgroundColor_EvenDark;
+              color: #fff;
+              width: 6%;
+              height: 280px;
+              border-radius: 10px;
+              resize: none;
+              // margin-bottom: 3%;
+          }
+          center:nth-child(13) input{
+            position: relative;
+            width: 100%;
+            background-color: $BackgroundColor_EvenDark;
+            color: #fff;
+            font-size: 0.8em;
+          }
+          #btninsert{
+              position: relative;
+              width: 60%;
+              height: 50px;
+              background-color: #1ca82d;
+              color: #fff;
+              font-size: 1.5em;
+          }
+      }
+  }
+}
 
 #containerMainHeadPhone{
   display: none;
@@ -558,70 +789,111 @@ body{
   @include positionStyle(relative, 100%, 91%);
   margin: auto;
   overflow-y: scroll;
-  .itens{
-    display: flex;
-    overflow-x: scroll;
-    scrollbar-width: initial;
+  .mainNews{
+    margin-top: 0.5%;
+    @include positionStyle(relative, 80%, 100%);
+    .category1{
+        @include positionStyle(relative, 100%, 20%);
+        float: left;
+        background-color: #fff;
+    }
+    .category2{
+        @include positionStyle(relative, 100%, 20%);
+        float: left;
+        margin-left: 0.2%;
+        background-color: #fff;
+    }
+    .category3{
+        @include positionStyle(relative, 100%, 20%);
+        float: left;
+        margin-left: 0.2%;
+        background-color: #fff;
+    }
+    .category4{
+        @include positionStyle(relative, 100%, 20%);
+        float: left;
+        margin-left: 0.2%;
+        background-color: #fff;
+    }
+    .category5{
+      @include positionStyle(relative, 100%, 19%);
+      float: left;
+      margin-left: 0.2%;
+      background-color: #fff;
+  }
+  
 }
-.itens .item{
-  min-width: 200px;
-  height: 300px;
-  margin: 5px;
-  .podcastBanner{
-      @include positionStyle(relative, 100%, 100%);
-      float: left;
-      img{
-        width: 200px;
-        height: 300px;
-      }
-      img:hover{
-        transition: 0.3s;
-        width: 220px;
-        height: 320px;
-      }
-    }
-    .containerInfo{
-      @include positionStyle(absolute, 25%, 100%);
-      background-color:rgba(26, 9, 41, 0.7);
-      bottom: 0;
-      left: 0;
-   }
-   .podcastName{
-      @include positionStyle(relative, 35%, 65%);
-      font-size: 1.2em;
+    h3{
+      font-size: 1.4em;
       color: #fff;
-      margin-top: 1%;
-      margin-left: 3%;
-      float: left;
+      margin: 0.5% 0 0.5% 0;
     }
-    .podcastDesc{
-        @include positionStyle(relative, 60%, 65%);
+    .itens{
+      display: flex;
+      overflow-x: scroll;
+      scrollbar-width: initial;
+      margin-bottom: 2%;
+  }
+    .itens .item{
+      min-width: 200px;
+      height: 300px;
+      margin: 5px;
+    .podcastBanner{
+        @include positionStyle(relative, 300px, 200px);
+        float: left;
+        img{
+          width: 200px;
+          height: 300px;
+          transition: 0.3s;
+        }
+        img:hover{
+          transition: 0.3s;
+          width: 210px;
+          height: 310px;
+        }
+      }
+      .containerInfo{
+        @include positionStyle(absolute, 25%, 100%);
+        background-color:rgba(26, 9, 41, 0.7);
+        bottom: 0;
+        left: 0;
+    }
+    .podcastName{
+        @include positionStyle(relative, 35%, 65%);
+        font-size: 1.2em;
         color: #fff;
-        font-size: 0.6em;
-        margin-top: 0.5%;
+        margin-top: 1%;
         margin-left: 3%;
         float: left;
-        word-wrap: break-all;
+      }
+      .podcastDesc{
+          @include positionStyle(relative, 60%, 65%);
+          color: #fff;
+          font-size: 0.6em;
+          margin-top: 0.5%;
+          margin-left: 3%;
+          float: left;
+          word-wrap: break-all;
+      }
+      .podcastView{
+        @include positionStyle(relative, 100%, 32%);
+        i {
+          @include positionStyle(absolute, 40%, 100%);
+          color: #ef4b50;
+          font-size: 2em;
+          left: 24%;
+          top: 10%;
+        }
+        p {
+          @include positionStyle(relative, 40%, 100%);
+          color: #fff;
+          font-size: 1em;
+          text-align: center;
+          margin-top: 65%;
+        }
     }
-    .podcastView{
-      @include positionStyle(relative, 100%, 32%);
-      i {
-        @include positionStyle(absolute, 40%, 100%);
-        color: #ef4b50;
-        font-size: 2em;
-        left: 24%;
-        top: 10%;
-      }
-      p {
-        @include positionStyle(relative, 40%, 100%);
-        color: #fff;
-        font-size: 1em;
-        text-align: center;
-        margin-top: 65%;
-      }
   }
-}
-}
+  }
 
 .itens::-webkit-scrollbar {
   width: 12px;
@@ -728,11 +1000,17 @@ body{
 }
 
 .containerMainSettings{
-  @include positionStyle(relative, 100%, 91%);
-  margin: auto;
-  overflow-y: scroll;
-  .header{
-    @include positionStyle(relative, 100%, 91%);
-      background-color: #fff;
-  }
+    @include positionStyle(relative, 100%, 100%);
+    background-color: $Purple_Light;
+    .leftInfoContainer{
+        @include positionStyle(relative, 100%, 25%);
+        background-color: $Purple_Dark;
+        .imgUser{
+            height: 40%;
+            width: 80%;
+            background-color: $Yellow_Dark;
+            margin: auto;
+            border-radius: 60%;
+        }
+    }
 }
