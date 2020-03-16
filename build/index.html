@@ -251,7 +251,7 @@
                 <div class="itens">
                     <div class="item">
                         <div class="podcastBanner">
-                            <img src="img/capa_img/harrypotter.jpg">
+                            <a href=""><img src="img/capa_img/harrypotter.jpg"></a>
                             <div class="containerInfo">
                                 <div class="podcastName">PodCast Exemplo</div>
                                 <div class="podcastDesc">conheça o podcast mais famoso de nossa plataforma e tambem o que ele pode te porporcionar para uma vida ainda melhor</div>
@@ -269,7 +269,7 @@
                 <div class="itens">
                     <div class="item">
                         <div class="podcastBanner">
-                            <img src="img/capa_img/harrypotter.jpg">
+                            <a href=""><img src="img/capa_img/harrypotter.jpg"></a>
                             <div class="containerInfo">
                                 <div class="podcastName">PodCast Exemplo</div>
                                 <div class="podcastDesc">conheça o podcast mais famoso de nossa plataforma e tambem o que ele pode te porporcionar para uma vida ainda melhor</div>
@@ -287,7 +287,7 @@
                 <div class="itens">
                     <div class="item">
                         <div class="podcastBanner">
-                            <img src="img/capa_img/harrypotter.jpg">
+                            <a href=""><img src="img/capa_img/harrypotter.jpg"></a>
                             <div class="containerInfo">
                                 <div class="podcastName">PodCast Exemplo</div>
                                 <div class="podcastDesc">conheça o podcast mais famoso de nossa plataforma e tambem o que ele pode te porporcionar para uma vida ainda melhor</div>
@@ -305,7 +305,7 @@
                 <div class="itens">
                     <div class="item">
                         <div class="podcastBanner">
-                            <img src="img/capa_img/harrypotter.jpg">
+                            <a href=""><img src="img/capa_img/harrypotter.jpg"></a>
                             <div class="containerInfo">
                                 <div class="podcastName">PodCast Exemplo</div>
                                 <div class="podcastDesc">conheça o podcast mais famoso de nossa plataforma e tambem o que ele pode te porporcionar para uma vida ainda melhor</div>
@@ -352,9 +352,51 @@
             </div>
 
             <div id="containerMainSettings" class="containerMainSettings">
-                <div class="leftInfoContainer">
-                    <div class="imgUser">
-                        <img src="" alt="">
+                <div class="wrapperUserSettings">
+                    <div class="leftInfoContainer">
+                        <div class="imgUser">
+                            <img src="" alt="">
+                        </div>
+                        <a href="#"><button>Trocar Imagem</button></a>
+                        <p>Status:</p>
+                        <div class="status">
+                            <form action="">
+                                <!-- Dentro do placeholder buscar do banco o atual status -->
+                                <textarea name="" id="fdesc" cols="30" rows="10" maxlength="30" placeholder="Digite seu status..."></textarea>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrapperSettingGlobal">
+                    <div class="containerSettingsGlobal">
+                        <form action="">
+
+                            <h5>Informações Pessoais:</h5>
+
+                            <div class="wrapperPersoninfo">
+                                <label for="name" id="lblName">Mudar Nome:</label>
+                                <br>
+                                <input type="text" id="name">
+
+                                <label for="name" id="lblNickName">Mudar NickName:</label>
+                                <br>
+                                <input type="text" id="name">
+                            </div>
+
+                            <h5>Trocar E-mail e senha:</h5>
+
+                            <div class="wrapperAccountinfo">
+                                <label for="name" id="lblName">Trocar E-mail:</label>
+                                <br>
+                                <input type="text" id="name">
+
+                                <label for="name" id="lblName">Senha:</label>
+                                <br>
+                                <input type="text" id="name">
+                            </div>
+
+                            <input type="submit">
+                        </form>
                     </div>
                 </div>
             </div>
